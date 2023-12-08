@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cimg/base:2022.09
-        
+    parallelism: 20
     steps:
       - checkout
       - setup_remote_docker
